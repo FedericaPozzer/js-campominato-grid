@@ -27,3 +27,7 @@ body {
 button {
     height: 100%;
 }
+
+.clicked {
+    background-color: rgb(92, 125, 200);
+}

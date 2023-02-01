@@ -19,23 +19,36 @@ my_button.addEventListener(
     "click", 
     function () {
         // genero la griglia.. come? BOH, intanto vedi se va:
-        console.log("cliccato");
+        // console.log("cliccato");
+        // prendo la griglia dall'HTML
+        const grid_el = document.getElementById("grid");
+        // collego la funzione griglia con la girglia pescata dall'HTML
+        generate_grid(grid_el);
+
+
+        /********************************
+         *          FUNZIONI            *
+         *******************************/
+
+
+        // funzione per creare la griglia con dentro le celle
+        function generate_grid(grid) {
+
+            for (let i = 0; i < 100; i++) {
+                // creo le celle
+                const cell_el = document.createElement("div");
+                cell_el.classList.add("square");
+                grid.append(cell_el);
+
+                // "quando clicco sulla cella, cambia colore"
+                cell_el.addEventListener("click",
+                    function () {
+                        this.classList.toggle("clicked");
+                    }
+                )
+            }
+        };
     }
 )
 
-const grid_el = document.getElementById("grid");
-generate_grid(grid_el);
 
-/********************************
- *          FUNZIONI            *
- *******************************/
-
-// funzione per creare la griglia con dentro le celle
-function generate_grid(grid) {
-
-    for (let i = 0; i < 100; i++) {
-        const cell_el = document.createElement("div");
-        cell_el.classList.add("square");
-        grid.append(cell_el);
-    }
-};
