@@ -31,8 +31,25 @@ my_button.addEventListener(
          *******************************/
 
 
-        // funzione per creare la griglia con dentro le celle
+        // funzione per creare la griglia con dentro le celle numerate
         function generate_grid(grid) {
+
+
+            // le celle devono essere numerate, quindi:
+                // dichiaro array lista numeri (vuota)
+            let lista_numeri = [];
+                // condizioni per generare i numeri
+            for (let i = 0; i < 100; i++) {
+                    // pusho i numeri generati nell'array
+                lista_numeri.push(i + 1);
+            }
+            // funziona? NOPE -- perchè? AAAAH ok, perchè siamo dentro a un click iniziale -.-" ok, funziona!
+            console.log(lista_numeri);
+
+            // now, ogni volta che genro una cella la devo numerare :)
+            // COME? BOH!
+
+            
 
             for (let i = 0; i < 100; i++) {
                 // creo le celle
@@ -50,5 +67,3 @@ my_button.addEventListener(
         };
     }
 )
-
-
