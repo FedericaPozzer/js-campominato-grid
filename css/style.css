@@ -8,8 +8,8 @@ body {
 }
 
 .grid {
-    height: 1000px;
-    width: 1000px;
+    height: 800px;
+    width: 800px;
     border: 1px solid palevioletred;
 
     display: flex;
@@ -17,9 +17,13 @@ body {
 }
 
 .square {
-    height: 100px;
-    width: 100px;
+    height: calc(100% / 10);
+    width: calc(100% / 10);
     border: 1px solid palevioletred;
 
     background-color: rgb(173, 45, 87);
+} 
+
+button {
+    height: 100%;
 }
