@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: teal;
+}
+
+.grid {
+    height: 1000px;
+    width: 1000px;
+    border: 1px solid palevioletred;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    height: 100px;
+    width: 100px;
+    border: 1px solid palevioletred;
+
+    background-color: rgb(173, 45, 87);
+}
