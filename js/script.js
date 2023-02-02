@@ -21,18 +21,31 @@ my_button.addEventListener(
         // prendo la griglia dall'HTML
         const grid_el = document.getElementById("grid");
         // collego la funzione griglia con la girglia pescata dall'HTML
-        generate_grid(grid_el);
+        generate_grid(grid_el, 1);
+        
+        // distinzione in base al livello selezionato
+            // richiamo il mio select
+        let difficulty_el = document.getElementById("difficulty");
+            // assegno il suo value a una costante
+        const level = difficulty_el.value;
+            // funziona? si!
+        console.log("livello selezionato: " + level);
     }
 )
+
 
 
 /************************************
  *            FUNCTIONS             *
  ***********************************/
 
+/**
+ * funzione per creare una griglia con dentro le celle numerate
+ * @param {HTMLElement} grid griglia con celle
+ * @param {int} difficulty il livello di difficoltà selezionato (che definisce se le mie celle saranno 100 -easy-, 81 -medium- oppure 64 -hard- )
+ */
 
-// funzione per creare la griglia con dentro le celle numerate
-function generate_grid(grid) {
+function generate_grid(grid, difficulty) {
     
     // svuoto la grid (nel caso sia piena, così se clicco "start game" più volte non comapiono griglie sotto)
     grid.innerHTML = "";
@@ -40,16 +53,14 @@ function generate_grid(grid) {
     // le celle devono essere numerate, quindi:
     // dichiaro array lista numeri (vuota)
     let lista_numeri = [];
+
     // condizioni per generare i numeri
     for (let i = 0; i < 100; i++) {
         // pusho i numeri generati nell'array
         lista_numeri.push(i + 1);
     }
     // funziona? NOPE -- perchè? AAAAH ok, perchè siamo dentro a un click iniziale -.-" ok, funziona!
-    console.log(lista_numeri);
-
-    // now, ogni volta che genero una cella la devo numerare :)
-    // COME? BOH! Cioè so che devo append il numero nell'HTML but how???
+    // console.log(lista_numeri);
 
 
     for (let i = 0; i < 100; i++) {
@@ -62,7 +73,24 @@ function generate_grid(grid) {
         cell_el.addEventListener("click",
             function () {
                 this.classList.toggle("clicked");
+                console.log("hai cliccato la cella numero " + this.innerHTML);
             }
         )
+
+        // now, ogni volta che genero una cella la devo numerare :)
+        cell_el.innerHTML = i + 1;
     }
 };
+
+// BONUS BOH -- non va
+// let numero_celle;
+// if (difficulty == 1) {
+//     numero_celle = 100;
+//     // cell_el.classList.add("square-medium");
+// } else if (difficulty == 2) {
+//     numero_celle = 81;
+//     cell_el.classList.add("square-medium");
+// } else if (difficulty == 3) {
+//     numero_celle = 64;
+//     cell_el.classList.add("square-big");
+// }

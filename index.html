@@ -19,7 +19,16 @@
 <body>
    
     <div class="container-fluid d-flex">
-        <button id="start-button" class="align-self-center me-2">START GAME!</button>
+        <div class="align-self-center">
+            <select name="" id="difficulty" class="mb-5">
+                <option value="1">Livello 1 - easy</option>
+                <option value="2">Livello 2 - medium</option>
+                <option value="3">Livello 3 - hard</option>
+            </select>
+
+            <button id="start-button" class="me-2 mt-5">START GAME!</button>
+        </div>
+       
         
         <div class="grid mt-5" id="grid"></div>
     </div>
